@@ -1,0 +1,2 @@
+# Get current indices
+curl -s http://<elastic_address>:9200/_cat/indices?v

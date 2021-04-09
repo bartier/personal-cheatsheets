@@ -1,0 +1,2 @@
+# Minify a JSON File
+cat <json_file> | python -c 'import json, sys;json.dump(json.load(sys.stdin), sys.stdout)'

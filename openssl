@@ -1,0 +1,2 @@
+# Output content of a certificate
+openssl x509 -in <certificate_crt_file> -text -noout

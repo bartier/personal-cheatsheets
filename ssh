@@ -1,0 +1,3 @@
+# Create SSH session using an username from an active directory
+# e.g ssh -l vitor.anjos@stone.local jump-v-lx-1p01.stone.local
+ssh -l <username> <host>
