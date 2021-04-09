@@ -7,8 +7,6 @@ Link: https://github.com/bartier/personal-cheatsheets-files/blob/main/kind-setup
 
 
 # Create local kubernetes cluster with kind
-# 1 control plane node
-# 1 worker node
 kind create cluster --name <cluster_name> --config <kind_file.yml>
 
 
