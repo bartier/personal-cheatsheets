@@ -1,0 +1,39 @@
+# Run docker container with kafka bin directory
+docker run --rm -it taion809/kafka-cli bash
+
+
+
+# List topics
+kafka-topics.sh --bootstrap-server <bootstrap_servers> --list
+
+
+
+# Create a topic
+kafka-topics.sh --bootstrap-server <bootstrap_servers> --create --topic <topic_name> --partitions <topic_partitions_size> --replication-factor <replication_factor>
+
+
+
+# Delete a topic
+kafka-topics.sh --bootstrap-server <bootstrap_servers> --delete --topic <topic_name>
+
+
+
+# Describe a topic
+kafka-topics.sh --bootstrap-server <bootstrap_servers> --describe --topic <topic_name>
+
+
+
+# Describe consumer group
+kafka-consumer-groups.sh --bootstrap-server <bootstrap_servers> --describe --group <consumer_group>
+
+
+
+# Send a message to a topic
+kafka-console-producer.sh --broker-list <bootstrap_servers> --topic <topic_name>
+
+
+
+# Consume messages from a topic
+# The config file should have a line like below:
+#group.id=<your_group_id_to_consume_the_topic>
+kafka-console-consumer.sh --bootstrap-server <bootstrap_servers --topic <topic_name> --consumer.config <config_file>

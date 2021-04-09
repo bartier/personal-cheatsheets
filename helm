@@ -1,8 +1,12 @@
 # List installed plugins
 helm plugin list
 
+
+
 # List charts from repositories
 helm search repo [pattern]
+
+
 
 # Install/upgrade helm chart
 helm upgrade --install -n <kubernetes_namespace> --create-namespace -f <custom_chart_values_yml_file> <release_name> <chart_location>

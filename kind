@@ -1,0 +1,31 @@
+# YML file to describe local cluster with:
+# - 1 control plane node
+# - 1 worker node
+# - Configured settings to allow ingress deployments   
+Link: https://github.com/bartier/kind-notes/blob/main/kind-setup-suggestion.yml
+
+
+
+# Create local kubernetes cluster with kind
+# 1 control plane node
+# 1 worker node
+kind create cluster --name <cluster_name> --config <kind_file.yml>
+
+
+
+# Configure nginx as ingress to the local cluster
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+# Reference link: https://kind.sigs.k8s.io/docs/user/ingress/#ingress-nginx
+
+
+
+# Test nginx kind ingress
+# 1. Apply the YML file below to the cluster:
+Link: https://github.com/bartier/kind-notes/blob/main/test-nginx-ingress.yml
+kubectl apply -f <file_above_from_github>
+
+# 2. Optional: update your local DNS to allow nginx-test.local to target your ingress-test.
+echo "127.0.0.1 nginx-test.local" | sudo tee -a /etc/hosts
+
+# 3.Validate the deployed service to test the nginx ingress:
+curl -s http://nginx-test.local/

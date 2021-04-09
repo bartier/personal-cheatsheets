@@ -1,0 +1,18 @@
+# Backup a database
+mysqldump -u <user> -p <database_name> > <your_file>.sql
+
+
+
+# Restore a database
+cat <source_file>.sql | mysql -u <user> -p <target_database>
+
+
+
+# Restore a database with progress visualization
+pv -pert <source_file>.sql | mysql -u <user> -p <target_database>
+
+
+
+# Get last restore date of a MySQL instance
+SELECT * FROM information_schema.tables WHERE table_name = "YOUR_TABLE";
+# 1. Check the field 'CREATE_TIME' from the select above.
