@@ -1,0 +1,12 @@
+# Remove tcp payload from pcap files
+# 1. Run the python script below:
+# 2. Don't forget to change the variable INFILE and OUTFILE to find your desired files
+Link: https://github.com/bartier/personal-cheatsheets-files/blob/main/remove_tcp_payload_from_pcap_files.py
+python remove_tcp_payload_from_pcap_files.py
+
+
+
+# Rotate pcap when capturing packets
+# This will rotate files (of names trace1, trace2, ...) 
+# cyclically, with period 5 (files), either every 1800 seconds (=30 minutes) or every 100 MB, whichever comes first.
+tcpdump <filter_expression> -i <interface> -W 5 -C 100 -G 1800 -w <tmp_trace_folder>

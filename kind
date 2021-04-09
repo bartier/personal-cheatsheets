@@ -2,7 +2,7 @@
 # - 1 control plane node
 # - 1 worker node
 # - Configured settings to allow ingress deployments   
-Link: https://github.com/bartier/kind-notes/blob/main/kind-setup-suggestion.yml
+Link: https://github.com/bartier/personal-cheatsheets-files/blob/main/kind-setup-suggestion.yml
 
 
 
@@ -21,7 +21,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 
 # Test nginx kind ingress
 # 1. Apply the YML file below to the cluster:
-Link: https://github.com/bartier/kind-notes/blob/main/test-nginx-ingress.yml
+Link: https://github.com/bartier/personal-cheatsheets-files/blob/main/test-nginx-ingress.yml
 kubectl apply -f <file_above_from_github>
 
 # 2. Optional: update your local DNS to allow nginx-test.local to target your ingress-test.

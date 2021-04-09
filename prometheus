@@ -1,0 +1,2 @@
+# Reload the Prometheus configuration without restart
+sudo killall -HUP prometheus

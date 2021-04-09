@@ -1,0 +1,2 @@
+# Get directories size
+du -sch [DIRECTORIES]

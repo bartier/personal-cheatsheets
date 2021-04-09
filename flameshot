@@ -1,0 +1,6 @@
+# Replace default screenshot shortcut to flameshot GUI
+# Make sure flameshot has been already installed.
+dconf-editor
+# 1. Go to /org/gnome/settings-daemon/plugins/media-keys/ and disable Use default value for 'screenshot'
+# 2. Now you need to add the new shortcut in the UI. You can access the UI searching for 'keyboard' in your GUI environment
+# Image reference: https://user-images.githubusercontent.com/18057391/79029122-579e5c00-7b69-11ea-88ca-ba865f1ffb5f.png
