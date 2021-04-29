@@ -1,0 +1,2 @@
+# Test TCP connectivity 
+Test-NetConnection <ip_address> -Port <port>
