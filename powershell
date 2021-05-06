@@ -1,2 +1,5 @@
 # Test TCP connectivity 
 Test-NetConnection <ip_address> -Port <port>
+
+# Apply Update
+Get-WindowsUpdate -Install
