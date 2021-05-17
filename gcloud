@@ -1,0 +1,5 @@
+# Copy BigQuery table
+bq cp \
+-a -n \
+<project_id>:<data_set>.<table_name> \
+<project_id>:<data_set>.<table_name>
