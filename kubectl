@@ -5,3 +5,8 @@ kubectl run --rm -ti --image=travelping/nettools -- test bash
 
 # Change default current namespace
 kubectl config set-context --current --namespace=<namespace_name>
+
+
+
+# Explain CRDs
+kubectl explain <resource>
