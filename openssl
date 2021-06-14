@@ -28,3 +28,6 @@ openssl x509 -in <cert.crt> >> <cert_output.pem>
 
 # Verify chain
 openssl verify -show_chain -untrusted <ca.pem> <cert.pem>
+
+# How to check if the certificate matches a Private Key
+https://www.ssl247.co.uk/kb/ssl-certificates/troubleshooting/certificate-matches-private-key
