@@ -22,3 +22,9 @@ openssl pkcs12 -nocerts -in <input_file> -out private.key -passout pass:<key_pas
 # Create PFX file
 cat <domain.crt> <intermediate.crt> <ca.crt> > bundle.crt
 openssl pkcs12 -export -out <output_file.pfx> -inkey <key_file> -in bundle.crt
+
+# Get certificates with PEM format 
+openssl x509 -in <cert.crt> >> <cert_output.pem>
+
+# Verify chain
+openssl verify -show_chain -untrusted <ca.pem> <cert.pem>
