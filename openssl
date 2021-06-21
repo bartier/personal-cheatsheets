@@ -1,17 +1,25 @@
 # Output content of a certificate
 openssl x509 -in <certificate_crt_file> -text -noout
 
+
+
 # The filename extension for PKCS #12 files is .p12 or .pfx
 # PKCS#12 is the successor to Microsoft's "PFX" however, the terms "PKCS #12 file" and "PFX file" are sometimes used interchangeably.
 # These files can be created, parsed and read out with the OpenSSL pkcs12 command.
+
+
 
 # Get CA certificates from PFX file
 # You may have to add the password as the argument too with '-passin pass:<pfx_password>'
 openssl pkcs12 -nokeys -cacerts -in <input_file> -out ca.crt
 
+
+
 # Get client certificate from PFX file
 # You may have to add the password as the argument too with '-passin pass:pfx_password'
 openssl pkcs12 -nokeys -clcerts -in <input_file> -out cert.crt
+
+
 
 # Get private key from PFX file
 # You may have to add the password as the argument too with '-passin pass:pfx_password'
@@ -19,15 +27,22 @@ openssl pkcs12 -nokeys -clcerts -in <input_file> -out cert.crt
 openssl pkcs12 -nocerts -in <input_file> -out private.key -passout pass:<key_password>
 
 
+
 # Create PFX file
 cat <domain.crt> <intermediate.crt> <ca.crt> > bundle.crt
 openssl pkcs12 -export -out <output_file.pfx> -inkey <key_file> -in bundle.crt
 
+
+
 # Get certificates with PEM format 
 openssl x509 -in <cert.crt> >> <cert_output.pem>
 
+
+
 # Verify chain
 openssl verify -show_chain -untrusted <ca.pem> <cert.pem>
+
+
 
 # How to check if the certificate matches a Private Key
 https://www.ssl247.co.uk/kb/ssl-certificates/troubleshooting/certificate-matches-private-key
