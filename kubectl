@@ -10,3 +10,8 @@ kubectl config set-context --current --namespace=<namespace_name>
 
 # Explain CRDs
 kubectl explain <resource>
+
+
+
+# Get expiration date of secret
+kubectl get secret <secret_name> -n <namespace> -o "jsonpath={.data['tls\.crt']}" | base64 -d | openssl x509 -enddate -noout
