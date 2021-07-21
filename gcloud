@@ -8,3 +8,6 @@ bq cp \
 
 # Get default project project ID
 gcloud config get-value project
+
+# Get active account
+gcloud auth list
